@@ -1,0 +1,342 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Class Diagram - Class Diagram of Book Shop Mnagement System</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		Book Shop Management System	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p>
+<a href="Package_dL_vgDGFS_kibxCp.html" class="PageParentTitle">Class Diagram of Book Shop Mnagement System : Package</a>	</p>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Class Diagram - Class Diagram of Book Shop Mnagement System		</span>
+<a onclick="javascript: showVpLink('book-management-system.vpp://diagram/xYLvgDGFS_kibxCc', 'Class Diagram of Book Shop Mnagement System\nbook-management-system.vpp://diagram/xYLvgDGFS_kibxCc', 'Class Diagram of Book Shop Mnagement System', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),hideLinkPopup(),hideReferencedBys();">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin('diagram', this.value);hideLinkPopup();showSpotLight('diagram', this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|182.0|555.0|178.0|223.0|Class_xG18QDGFS_kibxhS.html|Class_xG18QDGFS_kibxhS.html|xG18QDGFS_kibxhR" id="optionxG18QDGFS_kibxhR">Inventory Class : Class</option>
+<option value="shape|440.0|448.0|184.0|223.0|Class_CiNcQDGFS_kibxe1.html|Class_CiNcQDGFS_kibxe1.html|CiNcQDGFS_kibxe0" id="optionCiNcQDGFS_kibxe0">Sales Class : Class</option>
+<option value="shape|657.0|588.0|202.0|223.0|Class_4cVsQDGFS_kibxcC.html|Class_4cVsQDGFS_kibxcC.html|4cVsQDGFS_kibxcB" id="option4cVsQDGFS_kibxcB">Receipt Class : Class</option>
+<option value="shape|890.0|356.0|190.0|223.0|Class_s4gsQDGFS_kibxar.html|Class_s4gsQDGFS_kibxar.html|s4gsQDGFS_kibxaq" id="options4gsQDGFS_kibxaq">Stocks Class : Class</option>
+<option value="shape|2.0|302.0|159.0|175.0|Class_QIMMQDGFS_kibxYs.html|Class_QIMMQDGFS_kibxYs.html|QIMMQDGFS_kibxYr" id="optionQIMMQDGFS_kibxYr">User Class : Class</option>
+<option value="shape|855.0|56.0|198.0|253.0|Class_wMC0QDGFS_kibxWf.html|Class_wMC0QDGFS_kibxWf.html|wMC0QDGFS_kibxWe" id="optionwMC0QDGFS_kibxWe">Book Class : Class</option>
+<option value="shape|475.0|2.0|180.0|223.0|Class_7lIUQDGFS_kibxT7.html|Class_7lIUQDGFS_kibxT7.html|7lIUQDGFS_kibxT6" id="option7lIUQDGFS_kibxT6">Permission Class : Class</option>
+<option value="shape|107.0|38.0|186.0|207.0|Class_UOUfgDGFS_kibxDV.html|Class_UOUfgDGFS_kibxDV.html|UOUfgDGFS_kibxDU" id="optionUOUfgDGFS_kibxDU">Role Class : Class</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/Class_Diagram_of_Book_Shop_Mnagement_System.png" usemap="#diagram_map" class="Image" width="1084" height="815"/>
+					<map name="diagram_map">
+<area imageId="diagram" coords="655.0, 94.0, 655.0, 108.0, 855.0, 108.0, 855.0, 94.0" coords2="655.0, 94.0, 655.0, 108.0, 855.0, 108.0, 855.0, 94.0" shape="poly" alt="permissin to book class:Association" id="areadiagram_map_N2AMQDGFS_kibxYP_default" href="Association_l2AMQDGFS_kibxYK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="42.0, 134.0, 42.0, 137.0, 39.0, 137.0, 39.0, 151.0, 42.0, 151.0, 42.0, 302.0, 56.0, 302.0, 56.0, 151.0, 107.0, 151.0, 107.0, 137.0, 56.0, 137.0, 56.0, 134.0" coords2="42.0, 134.0, 42.0, 137.0, 39.0, 137.0, 39.0, 151.0, 42.0, 151.0, 42.0, 302.0, 56.0, 302.0, 56.0, 151.0, 107.0, 151.0, 107.0, 137.0, 56.0, 137.0, 56.0, 134.0" shape="poly" alt=":Generalization" id="areadiagram_map_dzmMQDGFS_kibxZp_default" href="Generalization_lzmMQDGFS_kibxZo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="605.0, 225.0, 605.0, 331.0, 602.0, 331.0, 602.0, 345.0, 605.0, 345.0, 605.0, 348.0, 619.0, 348.0, 619.0, 345.0, 956.0, 345.0, 956.0, 356.0, 970.0, 356.0, 970.0, 345.0, 973.0, 345.0, 973.0, 331.0, 970.0, 331.0, 970.0, 328.0, 956.0, 328.0, 956.0, 331.0, 619.0, 331.0, 619.0, 225.0" coords2="605.0, 225.0, 605.0, 331.0, 602.0, 331.0, 602.0, 345.0, 605.0, 345.0, 605.0, 348.0, 619.0, 348.0, 619.0, 345.0, 956.0, 345.0, 956.0, 356.0, 970.0, 356.0, 970.0, 345.0, 973.0, 345.0, 973.0, 331.0, 970.0, 331.0, 970.0, 328.0, 956.0, 328.0, 956.0, 331.0, 619.0, 331.0, 619.0, 225.0" shape="poly" alt="permissin to stock:Association" id="areadiagram_map_ptmcQDGFS_kibxdq_default" href="Association_ptmcQDGFS_kibxdl.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="556.0, 225.0, 556.0, 366.0, 553.0, 366.0, 553.0, 380.0, 556.0, 380.0, 556.0, 383.0, 570.0, 383.0, 570.0, 380.0, 750.0, 380.0, 750.0, 588.0, 764.0, 588.0, 764.0, 380.0, 767.0, 380.0, 767.0, 366.0, 764.0, 366.0, 764.0, 363.0, 750.0, 363.0, 750.0, 366.0, 570.0, 366.0, 570.0, 225.0" coords2="556.0, 225.0, 556.0, 366.0, 553.0, 366.0, 553.0, 380.0, 556.0, 380.0, 556.0, 383.0, 570.0, 383.0, 570.0, 380.0, 750.0, 380.0, 750.0, 588.0, 764.0, 588.0, 764.0, 380.0, 767.0, 380.0, 767.0, 366.0, 764.0, 366.0, 764.0, 363.0, 750.0, 363.0, 750.0, 366.0, 570.0, 366.0, 570.0, 225.0" shape="poly" alt="permissin to receipt:Association" id="areadiagram_map_KsRcQDGFS_kibxeX_default" href="Association_CsRcQDGFS_kibxeS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="520.0, 225.0, 520.0, 448.0, 534.0, 448.0, 534.0, 225.0" coords2="520.0, 225.0, 520.0, 448.0, 534.0, 448.0, 534.0, 225.0" shape="poly" alt="permissin to sales:Association" id="areadiagram_map_Bk.8QDGFS_kibxg2_default" href="Association_Ok_8QDGFS_kibxgx.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="390.0, 175.0, 390.0, 178.0, 387.0, 178.0, 387.0, 192.0, 390.0, 192.0, 390.0, 580.0, 360.0, 580.0, 360.0, 594.0, 390.0, 594.0, 390.0, 597.0, 404.0, 597.0, 404.0, 594.0, 407.0, 594.0, 407.0, 580.0, 404.0, 580.0, 404.0, 192.0, 475.0, 192.0, 475.0, 178.0, 404.0, 178.0, 404.0, 175.0" coords2="390.0, 175.0, 390.0, 178.0, 387.0, 178.0, 387.0, 192.0, 390.0, 192.0, 390.0, 580.0, 360.0, 580.0, 360.0, 594.0, 390.0, 594.0, 390.0, 597.0, 404.0, 597.0, 404.0, 594.0, 407.0, 594.0, 407.0, 580.0, 404.0, 580.0, 404.0, 192.0, 475.0, 192.0, 475.0, 178.0, 404.0, 178.0, 404.0, 175.0" shape="poly" alt="permissin to inventory:Association" id="areadiagram_map_7dyCQDGFS_kibxip_default" href="Association_zdyCQDGFS_kibxik.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="339.0, 116.0, 339.0, 119.0, 336.0, 119.0, 336.0, 133.0, 339.0, 133.0, 339.0, 325.0, 161.0, 325.0, 161.0, 339.0, 339.0, 339.0, 339.0, 342.0, 353.0, 342.0, 353.0, 339.0, 356.0, 339.0, 356.0, 325.0, 353.0, 325.0, 353.0, 133.0, 475.0, 133.0, 475.0, 119.0, 353.0, 119.0, 353.0, 116.0" coords2="339.0, 116.0, 339.0, 119.0, 336.0, 119.0, 336.0, 133.0, 339.0, 133.0, 339.0, 325.0, 161.0, 325.0, 161.0, 339.0, 339.0, 339.0, 339.0, 342.0, 353.0, 342.0, 353.0, 339.0, 356.0, 339.0, 356.0, 325.0, 353.0, 325.0, 353.0, 133.0, 475.0, 133.0, 475.0, 119.0, 353.0, 119.0, 353.0, 116.0" shape="poly" alt=":Generalization" id="areadiagram_map_wEBCQDGFS_kibxjE_default" href="Generalization_AEBCQDGFS_kibxjD.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="293.0, 81.0, 293.0, 95.0, 475.0, 95.0, 475.0, 81.0" coords2="293.0, 81.0, 293.0, 95.0, 475.0, 95.0, 475.0, 81.0" shape="poly" alt="permissin to role:Association" id="areadiagram_map_KHh5oDGGAqBwAQ5g_default" href="Association_g7h5oDGGAqBwAQ5b.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="182, 555, 360, 778" coords2="182, 555, 360, 778" shape="rect" alt="Inventory Class:Class" id="areadiagram_map_xG18QDGFS_kibxhR_default" href="Class_xG18QDGFS_kibxhS.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="440, 448, 624, 671" coords2="440, 448, 624, 671" shape="rect" alt="Sales Class:Class" id="areadiagram_map_CiNcQDGFS_kibxe0_default" href="Class_CiNcQDGFS_kibxe1.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="657, 588, 859, 811" coords2="657, 588, 859, 811" shape="rect" alt="Receipt Class:Class" id="areadiagram_map_4cVsQDGFS_kibxcB_default" href="Class_4cVsQDGFS_kibxcC.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="890, 356, 1080, 579" coords2="890, 356, 1080, 579" shape="rect" alt="Stocks Class:Class" id="areadiagram_map_s4gsQDGFS_kibxaq_default" href="Class_s4gsQDGFS_kibxar.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2, 302, 161, 477" coords2="2, 302, 161, 477" shape="rect" alt="User Class:Class" id="areadiagram_map_QIMMQDGFS_kibxYr_default" href="Class_QIMMQDGFS_kibxYs.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="855, 56, 1053, 309" coords2="855, 56, 1053, 309" shape="rect" alt="Book Class:Class" id="areadiagram_map_wMC0QDGFS_kibxWe_default" href="Class_wMC0QDGFS_kibxWf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="475, 2, 655, 225" coords2="475, 2, 655, 225" shape="rect" alt="Permission Class:Class" id="areadiagram_map_7lIUQDGFS_kibxT6_default" href="Class_7lIUQDGFS_kibxT7.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="107, 38, 293, 245" coords2="107, 38, 293, 245" shape="rect" alt="Role Class:Class" id="areadiagram_map_UOUfgDGFS_kibxDU_default" href="Class_UOUfgDGFS_kibxDV.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_xG18QDGFS_kibxhS.html" class="ItemLink">Inventory Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_CiNcQDGFS_kibxe1.html" class="ItemLink">Sales Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_4cVsQDGFS_kibxcC.html" class="ItemLink">Receipt Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_s4gsQDGFS_kibxar.html" class="ItemLink">Stocks Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_QIMMQDGFS_kibxYs.html" class="ItemLink">User Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_wMC0QDGFS_kibxWf.html" class="ItemLink">Book Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_7lIUQDGFS_kibxT7.html" class="ItemLink">Permission Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Class.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Class.png'); background-repeat: no-repeat;">
+					</div>
+					&nbsp; <a href="Class_UOUfgDGFS_kibxDV.html" class="ItemLink">Role Class : Class</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		Book Shop Management System	</div>
+</body>
+</html>
